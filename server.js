@@ -33,17 +33,28 @@
 // });
 
 var WebSocketServer = require('websocket').server;
-var http = require('http');
+// var http = require('http');
 var uuidv4 = require('uuid/v4');
+var express = require('express');
 
-var server = http.createServer(function(request, response) {
-    console.log((new Date()) + ' Received request for ' + request.url);
-    response.writeHead(404);
-    response.end();
+var server = express().use((req, res) => {
+    console.log((new Date()) + ' Received request for ' + req.url);
+    req.writeHead(404);
+    req.end();
+
+}).listen(8080, () => {
+    console.log((new Date()) + ' Server is listening on port 8080...');
 });
-server.listen(8080, function() {
-    console.log((new Date()) + ' Server is listening on port 8080');
-});
+
+// var server = http.createServer(function(request, response) {
+//     console.log((new Date()) + ' Received request for ' + request.url);
+//     response.writeHead(404);
+//     response.end();
+// });
+// server.listen(8080, function() {
+//     console.log((new Date()) + ' Server is listening on port 8080');
+// });
+
 
 wsServer = new WebSocketServer({
     httpServer: server,
