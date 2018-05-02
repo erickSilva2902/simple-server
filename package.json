@@ -1,0 +1,15 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "description": "Simple server to accept connections.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EMS",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^3.2.1",
+    "websocket": "^1.0.25"
+  }
+}
