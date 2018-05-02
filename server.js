@@ -7,8 +7,9 @@ var app = express();
 
 var server = http.createServer(app);
 
-server.listen(8080, () => {
-    console.log((new Date()) + ' Server is listening on port 8080...');
+server.listen(process.env.PORT, () => {
+    // console.log((new Date()) + ' Server is listening on port 8080...');
+    console.log(`Server started on port ${server.address().port} :)`);
 });
 
 // var server = http.createServer(function(request, response) {
