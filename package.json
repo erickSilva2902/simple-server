@@ -1,15 +1,20 @@
 {
   "name": "simple-server",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Simple server to accept connections.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "EMS",
   "license": "ISC",
   "dependencies": {
+    "express": "4.16.3",
     "uuid": "^3.2.1",
     "websocket": "^1.0.25"
+  },
+  "engines": {
+    "node": "8.9.4"
   }
 }
